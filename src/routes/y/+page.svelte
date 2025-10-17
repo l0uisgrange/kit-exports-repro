@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { getFruits } from "./y.remote";
+    import { getFruits, createFruit } from "./y.remote";
     import { getBananaProfile } from "../x.remote";
 </script>
 
@@ -26,3 +26,11 @@
         {banana.quality}
     {/await} out of 10
 </p>
+
+<form {...createFruit}>
+    New list is {createFruit.result}, given the brand new fruit
+    <input {...createFruit.fields.name.as("text")} placeholder="orange" />
+    with quantity
+    <input {...createFruit.fields.quantity.as("number")} placeholder="6" />
+    <button type="submit">Submit</button>
+</form>
