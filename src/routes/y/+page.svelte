@@ -1,6 +1,8 @@
 <script lang="ts">
     import { getFruits, createFruit } from "./y.remote";
     import { getBananaProfile } from "../x.remote";
+
+    let { data } = $props();
 </script>
 
 <h2>Page that won't load unless removing the remote</h2>
@@ -8,6 +10,8 @@
     This issue is caused because the y.remote.ts calls a remote function from
     x.remote.ts.
 </p>
+
+{data.fruitsServer.fruits}
 
 <p>
     The fruits are
